@@ -1,0 +1,1 @@
+# fyuko2026.github.io
