@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>動画をHTMLに埋め込む</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .video-wrapper{
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            top:0;
+            left:0;
+            z-index: -1;
+        }
+        video{
+            object-fit: cover;
+            object-position: 50% 50%;
+            width: 100%;
+            height: 100%;
+        }
+        .text-wrapper{
+            width: 50%;
+            padding: 200px 100px;
+            background-color: #ffffff91;
+            font-family: "Rye", serif;
+        }
+
+        h1{
+            font-size: 48px;
+            margin-bottom: 50px;
+        }
+        p{
+            font: 18px;
+            line-height: 2;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="video-wrapper">
+    <video src="fire.mp4" autoplay muted loop playsinline></video>
+</div>
+<div class="text-wrapper">
+<h1>lorem10</h1>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, porro aliquam recusandae commodi rem saepe! Soluta illo autem accusantium rerum consectetur eligendi minus voluptates eaque dolor quam vero quibusdam voluptatibus perferendis incidunt delectus sint itaque hic nam quidem ipsum saepe, nulla rem ipsa voluptatem. Sunt quibusdam aspernatur voluptates, tenetur quidem commodi aperiam dolorem! Perferendis repellat quas ipsum nihil nobis alias doloremque, quod laudantium assumenda sapiente ex porro harum, incidunt temporibus vitae, eius fuga! Mollitia, molestias rerum facere eaque fuga earum sequi consequatur! Esse sunt voluptatum numquam quas! Magni corporis eaque error distinctio vero labore dolores quis! Aut similique excepturi quia vero, sit nihil voluptatum amet sequi. Quam totam eum ab eveniet. Enim ipsa voluptate odio necessitatibus. Dolorem vitae qui iusto molestias beatae exercitationem, quam id ullam ea nesciunt quasi consectetur omnis quia, eaque quod quas quibusdam error doloremque cumque explicabo consequatur cum pariatur quo veniam! Ullam voluptatum ipsa, ad, nam mollitia incidunt quos aut vitae aliquid quisquam debitis. Perspiciatis recusandae culpa et autem ullam minima dolore totam quasi vitae ratione velit saepe commodi, magni, ab nobis odit quaerat, id dicta enim porro eius accusantium! Qui iste cumque expedita, ut unde illum. Accusamus, incidunt ut? Excepturi veniam iste quisquam quae. Dicta!</p>
+</div>
+</body>
+</html>
