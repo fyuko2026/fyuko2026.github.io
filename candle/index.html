@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candle & Aurora Background</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #0b0f19;
+        }
+
+        /* コンテナ */
+        .scene-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 1. 背景：動くオーロラアニメーション層 */
+        .aurora-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+            background-size: 400% 400%;
+            animation: auroraAnimation 15s ease infinite;
+            opacity: 0.6;
+            z-index: 1;
+        }
+
+        @keyframes auroraAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* 2. 手前：キャンドル画像層 */
+        .candle-foreground {
+            position: relative;
+            z-index: 2;
+            max-width: 80%;
+            max-height: 80vh;
+            object-fit: contain;
+            /* 影をつけて奥行きを出す */
+            filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.7));
+        }
+    </style>
+</head>
+<body>
+
+    <div class="scene-container">
+        <!-- 動くオーロラの背景 -->
+        <div class="aurora-background"></div>
+
+        <!-- キャンドルの画像 (Pixabay等の画像URL、またはローカルの画像パスを指定) -->
+        <!-- ※綺麗に重ねる場合は背景を透過したPNG画像や、CSSのmix-blend-modeを活用すると効果的です -->
+        <img src="https://cdn.pixabay.com/photo/2025/08/11/04/24/candle-10533552_1280.jpg" alt="キャンドルの炎" class="candle-foreground">
+    </div>
+
+</body>
+</html>

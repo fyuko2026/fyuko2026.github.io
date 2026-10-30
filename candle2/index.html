@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ローソクの炎とオーロラの動画</title>
+    <style>
+        /* 画面全体に動画を配置するためのリセット */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        /* 動画の基本スタイル：画面いっぱいに表示 */
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 画面からはみ出さないように全体を表示 */
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 1s ease-in-out; /* 切り替え時のフェード用 */
+        }
+
+        /* アクティブな動画を表示するクラス */
+        video.active {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="video-container">
+        <!-- 1つ目の動画：ローソクの炎 -->
+        <video id="candleVideo" src="325565_tiny.mp4" autoplay muted playsinline class="active"></video>
+        
+        <!-- 2つ目の動画：動くオーロラ（※Pixabayのオーロラ動画のサンプルリンク） -->
+        <video id="auroraVideo" src="https://cdn.pixabay.com/video/2020/03/23/34423-399080271_large.mp4" muted playsinline></video>
+    </div>
+
+    <script>
+        const candleVideo = document.getElementById('candleVideo');
+        const auroraVideo = document.getElementById('auroraVideo');
+
+        // 1つ目の動画（ローソク）が終了したときの処理
+        candleVideo.addEventListener('ended', () => {
+            candleVideo.classList.remove('active');
+            auroraVideo.classList.add('active');
+            auroraVideo.play();
+        });
+
+        // 2つ目の動画（オーロラ）が終了したあとのループ設定（必要に応じて最初に戻すなど）
+        auroraVideo.addEventListener('ended', () => {
+            auroraVideo.classList.remove('active');
+            candleVideo.classList.add('active');
+            candleVideo.play();
+        });
+    </script>
+
+</body>
+</html
